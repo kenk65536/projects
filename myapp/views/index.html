@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <base = '/' />
+    <title>Index</title>
+    <meta charset='utf-8'>
+    <link type='iamge/x-icon' rel='shortcut icon' href='img/sys_mynetwork.ico'/>
+    <link type='text/css' rel='stylesheet' href='css/app.css' />
+    <script src='js/global.js'></script>
+  </head>
+  <body class='body'>
+    <p class='p1'>Welcom to Technet</p>
+    <% include footer %>
+    <label class='label'>Login : </label>
+    <input id='loginText' type='text' onKeypress='keyDown(event)' class='text'>
+    <button class='button' onClick='loginButton()'>Press</button>
+    <p id='p1'></p>
+    <p id='p2'></p>
+    <h2>Post example</h2>
+    <form id="psotExample" method="post" action="/postComment">
+      <div>
+        <label for="name">
+          姓名:
+        </label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">
+          信箱:
+        </label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div>
+        <label for="comment">
+          意見:
+        </label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      </div>
+      <input id="send" type="submit" value="送出">
+    </form>
+    <h2>Get example</h2>
+    <form id="getExample" method="get" action="/getComment">
+      <div>
+        <label for="name">姓名:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">信箱:</label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div>
+        <label for="comment">意見:</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      </div>
+      <input id="send" type="submit" value="送出">
+    </form>
+  </body>
+</html>

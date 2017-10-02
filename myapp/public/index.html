@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <base = '/' />
+    <title>Index</title>
+    <meta charset='utf-8'>
+    <link type='iamge/x-icon' rel='shortcut icon' href='img/sys_mynetwork.ico'/>
+    <link type='text/css' rel='stylesheet' href='css/app.css' />
+    <script src='js/global.js'></script>
+  </head>
+  <body class='body'>
+    <p class='p1'>Welcom to Technet</p>
+    <label class='label'>Login : </label>
+    <input id='loginText' type='text' onKeypress='keyDown(event)' class='text'>
+    <button class='button' onClick='loginButton()'>Press</button>
+    <form id='selectForm'>
+      <select id='selectLocation0' onChange='renew(this.selectedIndex);'>
+        <option selected value=''>請選擇您所在之區域</option>
+        <option value='大堂區'>大堂區</option>
+        <option value='望德堂區'>望德堂區</option>
+        <option value='風順堂區'>風順堂區</option>
+        <option value='花地瑪堂區'>花地瑪堂區</option>
+        <option value='聖安多尼堂區'>聖安多尼堂區</option>
+        <option value='嘉模堂區'>嘉模堂區</option>
+        <option value='聖方濟各堂區'>聖方濟各堂區</option>
+      </select>
+      <select id='selectLocation1' name='selectLocation1'>
+        <option selected value=''>請選擇</option>
+      </select>
+    </form>
+    <button class='button' onClick='selectTest()'>Select Tetst</button>
+    <p id='p1'></p>
+    <p id='p2'></p>
+    <p id='p3'></p>
+    <h2>Post example</h2>
+    <form id="psotExample" method="post" action="/postComment">
+      <div>
+        <label for="name">
+          姓名:
+        </label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">
+          信箱:
+        </label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div>
+        <label for="comment">
+          意見:
+        </label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      </div>
+      <input id="send" type="submit" value="送出">
+    </form>
+    <h2>Get example</h2>
+    <form id="getExample" method="get" action="/getComment">
+      <div>
+        <label for="name">姓名:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">信箱:</label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div>
+        <label for="comment">意見:</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      </div>
+      <input id="send" type="submit" value="送出">
+    </form>
+    <input type='button' value='CreateExample' onclick='createTextField();'/>
+  </body>
+</html>
