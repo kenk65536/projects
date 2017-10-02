@@ -17,8 +17,9 @@ function startButton(event) {
     recognition.start();//開始辨識
   }
 }
-if (!('webkitSpeechRecognition' in window))//如果找不到window.webkitSpeechRecognition這個屬性, 就是不支援語音辨識，要求使用者更新瀏覽器。
-  infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
+if (!('webkitSpeechRecognition' in window)){//如果找不到window.webkitSpeechRecognition這個屬性, 就是不支援語音辨識，要求使用者更新瀏覽器。
+  //infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
+}
 else {
   var recognition = new webkitSpeechRecognition();//建立語音辨識物件 webkitSpeechRecognition
   recognition.continuous = false;//設定連續辨識模式

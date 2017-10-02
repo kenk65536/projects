@@ -74,6 +74,17 @@ div {
   max-width: 45rem;
   min-width: 9.375rem;
 }
+.chat-column-mobile {
+  height: 74%;
+  position: absolute;
+  top:2%;
+  left:3%;
+  padding: 0rem 0 0.625rem 0rem;
+  margin: auto;
+  text-align: left;
+  max-width: 45rem;
+  min-width: 9.375rem;
+}
 #scrollingChat {
   margin: 1rem;
   overflow-y: auto;
