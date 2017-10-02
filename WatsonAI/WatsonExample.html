@@ -1,0 +1,86 @@
+下列是各項繳費方法及地點：
+<br>
+<button id="automaticTransfer" onClick="pricePlan(this.id);">自動轉帳</button>
+<button id="atm" onClick="pricePlan(this.id);">自動櫃員機</button>
+<button id="internetBanking" onClick="pricePlan(this.id);">網上銀行</button>
+<button id="telephoneFinance" onClick="pricePlan(this.id);">電話理財</button>
+<button id="mailCheckbook" onClick="pricePlan(this.id);">郵寄支票</button>
+<button id="counter" onClick="pricePlan(this.id);">櫃檯繳費</button>
+<button id="checkbook" onClick="pricePlan(this.id);">支票通</button>
+<br>
+(<? now().reformatDateTime('yyyy-MM-dd') ?>)
+
+請問您需要查詢電費什麼樣的服務呢？以下有幾種選擇可供您參考：
+<br>
+<button id="a1" onClick="calculatePricePlan(this.id);">一般收費</button>
+<button id="a2" onClick="calculatePricePlan(this.id);">平民收費</button>
+<button id="a3" onClick="calculatePricePlan(this.id);">社會慈善機構收費</button>
+<button id="a4" onClick="calculatePricePlan(this.id);">社會援助收費</button>
+<br>
+
+<script language='javascript'>
+  var arrayLocation = [["青洲區", "台山區", "馬場區", "祐漢區", "黑沙環區", "黑沙環新填海區", "望廈及水塘區", "筷子基區"],
+    ["林茂塘區", "高士德及雅廉訪區", "新橋區", "新橋區"],
+    ["新口岸區", "外港及南灣湖新填海區", "中區"],
+    ["荷蘭園區", "東望洋區(松山區)"],
+    ["下環區", "南西灣及主教山區"],
+    ["海洋及小潭山區", "海洋及小潭山區", "大學及北安灣區", "北安及大潭山區", "氹仔舊城及馬場區", "澳門大學新校區"],
+    ["路環市區", "石排灣", "九澳村", "黑沙村"]
+  ];
+  function renew(index){
+    var selectLocation1 = document.getElementById('selectLocation1');
+    if(index < 1){
+      selectLocation1.options[0] = new Option("請選擇");
+      selectLocation1.length = 1;
+    }
+    else{
+      for(var i=0; i<arrayLocation[index - 1].length; i++)
+        selectLocation1.options[i] = new Option(arrayLocation[index - 1][i], arrayLocation[index - 1][i]);
+      selectLocation1.length = arrayLocation[index - 1].length;
+    }
+  }
+</script>
+<select id='selectLocation0' onChange='renew(this.selectedIndex);'>
+  <option selected value=''>請選擇您所在之區域</option>
+  <option value='大堂區'>大堂區</option>
+  <option value='望德堂區'>望德堂區</option>
+  <option value='風順堂區'>風順堂區</option>
+  <option value='花地瑪堂區'>花地瑪堂區</option>
+  <option value='聖安多尼堂區'>聖安多尼堂區</option>
+  <option value='嘉模堂區'>嘉模堂區</option>
+  <option value='聖方濟各堂區'>聖方濟各堂區</option>
+</select>
+<select id='selectLocation1' name='selectLocation1'>
+  <option selected value=''>請選擇</option>
+</select>
+<button id='checkLocation' onClick='checkLocation();'>
+
+請更近一步選擇您想要查詢金額相關的細項:
+<select onChange='accumuationAboutGovMoney(this);'>
+  <option value='請選擇'>請選擇</option>
+  <option value='查詢金額'>查詢金額</option>
+  <option value='補貼用途'>補貼用途</option>
+  <option value='剩餘款項'>剩餘款項</option>
+</select>
+
+請問您需要知道政府補貼什麼樣的信息呢？以下有幾種選擇可供您參考:
+<select onChange='aboutGov(this);'>
+  <option value='請選擇'>請選擇</option>
+  <option value='累計金額'>累計金額</option>
+  <option value='政府補貼用途'>政府補貼用途</option>
+  <option value='剩餘款的去向'>剩餘款的去向</option>
+  <option value='計劃期'>計劃期</option>
+  <option value='補貼對象'>補貼對象</option>
+</select>
+
+
+Anything else
+anything_else
+<iframe width="360" height="315" src="https://www.youtube.com/embed/0Yl1KJbzxSA?rel=0&autoplay=1" frameborder="0" allowfullscreen volumn='0'>
+</iframe>Welcome CEM AI <br>
+<button onClick="language('english');">English</button>
+<button onClick="language('chinese');">中文</button>
+<button onClick="language('cantonese');">廣東話</button>
+<button onClick="language('portuguese');">Português</button>
+<br>(<? now().reformatDateTime('yyyy-MM-dd') ?>)
+<iframe onload="show('對不起，不了解您說什麼，可否重述一次');"width="0" height="0"></iframe>

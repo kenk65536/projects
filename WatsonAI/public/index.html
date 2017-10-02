@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <base href="/" />
+    <title>CEM conversion AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="CEM Demo" />
+    <meta property="og:description" content="CEM Demo" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body class="body">
+    <label id="infoBox"></label>
+    <div class="bkimg2" >
+      <img src="image/CEM_logo.png" style="position:absolute;top:20%;left:63%;">
+      <img src="image/AI.gif" style="position:absolute;top:60%;left:60%;width:22%;height:26%;">
+      <div id="contentParent" class="responsive-columns-wrapper">
+        <div id="chat-column-holder" class="responsive-column content-column">
+          <div class="chat-column">
+            <div id="scrollingChat"></div>
+            <label for="textInput" class="inputOutline">
+              <input type='image' id='startStopButton' style="position:absolute;top:115%;left:105%;width:40px;height:50px;" onclick="startButton(event)" src='image/mic-off.svg'>
+              <input type='image' id='voiceStopButton' style="position:absolute;top:100%;left:105%;width:40px;height:50px;" onclick="voiceButton(event)" src='image/voice-down.gif'>
+              <input id="textInput" class="responsive-column" placeholder="Welcome CEM AI" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"/>
+            </label>
+          </div>
+        </div>
+        <div id="payload-column" class="fixed-column content-column">
+          <div id="payload-initial-message">
+            Type something to see the output
+          </div>
+          <div id="payload-request" class="payload"></div>
+          <div id="payload-response" class="payload"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/payload.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/watsonConversation.js"></script>
+    <script src="js/textToSpeech.js"></script>
+    <script src="js/speechToText.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  </body>
+</html>
