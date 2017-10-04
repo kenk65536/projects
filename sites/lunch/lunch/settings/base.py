@@ -19,13 +19,13 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.13.17']
 #ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
+  'technet',
   'django.contrib.admin',
   'django.contrib.auth',
   'django.contrib.contenttypes',
   'django.contrib.sessions',
   'django.contrib.messages',
   'django.contrib.staticfiles',
-  'technet',
 ]
 MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
@@ -34,7 +34,7 @@ MIDDLEWARE = [
   'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ROOT_URLCONF = 'lunch.urls'
 TEMPLATES = [{
