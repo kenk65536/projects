@@ -1,6 +1,7 @@
 from django.contrib import admin
 from.models import *
 admin.site.register(post)
+admin.site.register(get)
 class menuItemInline(admin.StackedInline):
   model = MenuItem
   extra = 1
