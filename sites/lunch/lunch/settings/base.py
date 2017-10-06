@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 #SECRET_KEY = ')go(byu^0#-y#$0$8k^j#my+r+e+^altwmjv8hz=@slqxtd*2#'
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.13.17']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.11.173']
 #ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
