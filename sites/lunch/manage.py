@@ -4,7 +4,7 @@ import sys
 if __name__ == "__main__":
   os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lunch.settings")
   from django.core.management.commands.runserver import Command as runserver
-  runserver.default_port = "8088"
+  runserver.default_port = "3000"
   try:
     from django.core.management import execute_from_command_line
   except ImportError:

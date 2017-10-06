@@ -21,6 +21,8 @@ urlpatterns = [
   url(r'^chinaTest/$', chinaTest, name='chinaTest'),
   url(r'^stores/$', store_list, name='store_list'),
   url(r'^stores/(?P<pk>\d+)/$', store_detail, name='store_detail'),
+  url(r'^welcomeTest/$', welcomeForm, name='welcomeForm'),
+  url(r'^welcome/$',welcome),
   url(r'^(\d{1,2})/plus/(\d{1,2})/$', add),
   url(r'^(\d{1,2})/math/(\d{1,2})/$', math),
   url(r'^admin/', admin.site.urls),

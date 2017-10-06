@@ -15,6 +15,18 @@ def store_detail(request, pk):
   except store.DoesNotExist:
     raise Http404
   return render(request, 'store_detail.html', {'store': storeDetail})
+def welcomeForm(request):
+  food = {'name':'番茄炒蛋', 'price':60, 'comment':'好吃', 'is_spicy':False}
+  food1 = { 'name':'番茄炒蛋', 'price':60, 'comment':'好吃', 'is_spicy':False }
+  food2 = { 'name':'蒜泥白肉', 'price':100, 'comment':'人氣推薦', 'is_spicy':True }
+  foods = [food1, food2]
+  return render(request, 'welcome.html', locals())
+def welcome(request):
+  if 'user_name' in request.GET:
+    return HttpResponse('Welcome!~' + request.GET['user_name'])
+  else:
+    return render(request, 'welcome.html')
+    #return render(request, 'welcome.html', locals())
 def add(request, a, b):
   s = int(a) + int(b)
   return HttpResponse(str(s))
