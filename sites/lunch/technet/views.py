@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.http import *
 from .models import store
+from .forms import nameForm
+from django.views.decorators.csrf import csrf_protect
 def home(request):
   return render(request, 'home.html')
 def chinaTest(request):
@@ -21,12 +23,18 @@ def welcomeForm(request):
   food2 = { 'name':'蒜泥白肉', 'price':100, 'comment':'人氣推薦', 'is_spicy':True }
   foods = [food1, food2]
   return render(request, 'welcome.html', locals())
-def welcome(request):
+def getTest(request):
   if 'user_name' in request.GET:
     return HttpResponse('Welcome!~' + request.GET['user_name'])
   else:
     return render(request, 'welcome.html')
     #return render(request, 'welcome.html', locals())
+@csrf_protect
+def postTest(request):
+  ctx = {}
+  if request.POST:
+    ctx['ans'] = request.POST['name1']
+  return render(request, 'welcome.html', ctx)
 def add(request, a, b):
   s = int(a) + int(b)
   return HttpResponse(str(s))

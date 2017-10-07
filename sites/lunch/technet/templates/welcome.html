@@ -3,10 +3,17 @@
     <title> Welcome </title>
   </head>
   <body>
-    <form action="/welcome/" method="get">
+    Get example :
+    <form action="/welcome" method="get">
       <label for="user_name">您的名字</label>
         <input id="user_name" type="text" name="user_name">
         <input type="submit" value="進入網站">
+    </form>
+    Post example:
+    <form action="/welcomePost" method="post">
+      {% csrf_token %}
+      <p>姓名：<input type="text" name="name1"></p>
+      <input type="submit">
     </form>
     <ul>
       <li> 食物的名字是:{{ food.name }} </li>
@@ -22,5 +29,6 @@
         <li>食物會辣？ {{ food.is_spicy }}</li>
       </ul>
     {% endfor %}
+    <p>{{ ans }}</p>
   </body>
 </html>
