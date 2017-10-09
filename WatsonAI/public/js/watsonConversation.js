@@ -8,7 +8,7 @@ function sendText(sendContext){
 function pricePlan(pricePlan){
   switch(pricePlan){
     case "automaticTransfer":
-      sendText('自動轉帳');
+      sendText('轉帳');
     break;
     case "atm":
       sendText('自動櫃員機');
@@ -35,7 +35,12 @@ function pricePlan(pricePlan){
 function priceElectric(selected){
   switch(selected){
     case "electricity":
-      sendText('電量');
+      if(selectedLanguage == "UK English Female")
+        sendText('Electricity');
+      else if(selectedLanguage == "Portuguese Female")
+        sendText('Eletricidade');
+      else
+        sendText('電量');
     break;
     case "bill":
       sendText('帳單');

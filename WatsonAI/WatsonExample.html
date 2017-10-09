@@ -83,4 +83,21 @@ anything_else
 <button onClick="language('cantonese');">廣東話</button>
 <button onClick="language('portuguese');">Português</button>
 <br>(<? now().reformatDateTime('yyyy-MM-dd') ?>)
-<iframe onload="show('請問您需要知道政府補貼什麼樣的信息呢？以下有幾種選擇可供您參考');"width="0" height="0"></iframe>不明白您的意思，請問您需要電費相關什麼樣的服務呢？
+<iframe onload="show('Sorry, I dont understand');"width="0" height="0"></iframe>Sorry, I dont understand
+<iframe onload="show('What kind of services do you need to check for tariffs');"width="0" height="0"></iframe>What kind of services do you need to check for tariffs？Here are a few options for your reference： <br>
+<button id="electricity" onClick="priceElectric(this.id);">Electricity</button>
+<button id="bill" onClick="priceElectric(this.id);">Bill</button>
+<button id="account" onClick="priceElectric(this.id);">Account</button>
+<button id="payForPrice" onClick="priceElectric(this.id);">Payment</button>
+<button id="calculation" onClick="priceElectric(this.id);">Billing</button> <br>
+
+
+
+<iframe onload="show('The following is the payment method and location for your reference');"width="0" height="0"></iframe>The following is the payment method and location for your reference： <br>
+<button id="automaticTransfer" onClick="pricePlan(this.id);">Automatic transfer</button>
+<button id="atm" onClick="pricePlan(this.id);">ATM</button>
+<button id="internetBanking" onClick="pricePlan(this.id);">Internet banking</button>
+<button id="telephoneFinance" onClick="pricePlan(this.id);">Telephone finance</button>
+<button id="mailCheckbook" onClick="pricePlan(this.id);">Mail checkbook</button>
+<button id="counter" onClick="pricePlan(this.id);">Counter</button>
+<button id="checkbook" onClick="pricePlan(this.id);">Checkbook</button> <br> (<? now().reformatDateTime('yyyy-MM-dd') ?>)
