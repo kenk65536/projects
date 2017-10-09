@@ -22,6 +22,7 @@ def welcomeForm(request):
   food1 = { 'name':'番茄炒蛋', 'price':60, 'comment':'好吃', 'is_spicy':False }
   food2 = { 'name':'蒜泥白肉', 'price':100, 'comment':'人氣推薦', 'is_spicy':True }
   foods = [food1, food2]
+  #return render(request, 'welcome.html')
   return render(request, 'welcome.html', locals())
 def getTest(request):
   if 'user_name' in request.GET:
@@ -35,6 +36,7 @@ def postTest(request):
   if request.POST:
     ctx['ans'] = request.POST['name1']
   return render(request, 'welcome.html', ctx)
+  #return render(request, 'welcome.html', locals())
 def add(request, a, b):
   s = int(a) + int(b)
   return HttpResponse(str(s))

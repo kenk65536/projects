@@ -4,16 +4,17 @@
   </head>
   <body>
     Get example :
-    <form action="/welcome" method="get">
+    <form action="/getViews" method="get">
       <label for="user_name">您的名字</label>
         <input id="user_name" type="text" name="user_name">
         <input type="submit" value="進入網站">
     </form>
     Post example:
-    <form action="/welcomePost" method="post">
+    <form action="/postViews" method="post">
       {% csrf_token %}
-      <p>姓名：<input type="text" name="name1"></p>
-      <input type="submit">
+      <p>
+        姓名：<input type="text" name="name1"><input type="submit">
+      </p>
     </form>
     <ul>
       <li> 食物的名字是:{{ food.name }} </li>
