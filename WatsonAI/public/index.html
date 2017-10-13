@@ -25,22 +25,20 @@
     <label id="infoBox"></label>
     <div class="bkimg2" >
       <img src="image/CEM_logo.png" style="position:absolute;top:15%;left:63%;">
-      <img src="image/AI.gif" style="position:absolute;top:58%;left:60%;width:22%;height:30%;">
+      <img src="image/AI.gif" style="position:absolute;top:58%;left:60%;width:22%;height:33%;">
       <div id="contentParent" class="responsive-columns-wrapper">
         <div id="chat-column-holder" class="responsive-column content-column">
           <div id='test' class="chat-column">
             <div id="scrollingChat"></div>
             <label for="textInput" class="inputOutline">
-              <input type='image' id='startStopButton' style="position:absolute;top:115%;left:105%;width:40px;height:50px;" onclick="startButton(event)" src='image/mic-off.svg'>
-              <input type='image' id='voiceStopButton' style="position:absolute;top:100%;left:105%;width:40px;height:50px;" onclick="voiceButton(event)" src='image/voice-down.gif'>
+              <input type='image' id='startStopButton' style="position:absolute;top:115%;left:105%;width:40px;height:50px;" onclick="startButton(event)" src='image/mic-off.svg'/>
+              <input type='image' id='voiceStopButton' style="position:absolute;top:100%;left:105%;width:40px;height:50px;" onclick="voiceButton(event)" src='image/voice-down.gif'/>
               <input id="textInput" class="responsive-column" placeholder="Welcome CEM AI" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"/>
             </label>
           </div>
         </div>
         <div id="payload-column" class="fixed-column content-column">
-          <div id="payload-initial-message">
-            Type something to see the output
-          </div>
+          <div id="payload-initial-message">Type something to see the output</div>
           <div id="payload-request" class="payload"></div>
           <div id="payload-response" class="payload"></div>
         </div>
