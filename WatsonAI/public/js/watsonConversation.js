@@ -1,9 +1,9 @@
 function sendText(sendContext){
-  var context;// Retrieve the context from the previous server response
+  var context;//Retrieve the context from the previous server response
   var latestResponse = Api.getResponsePayload();
   if (latestResponse)
     context = latestResponse.context;
-  Api.sendRequest(sendContext, context);// Send the user message
+  Api.sendRequest(sendContext, context);//Send the user message
 }
 function pricePlan(pricePlan){
   switch(pricePlan){

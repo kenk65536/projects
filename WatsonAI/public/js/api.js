@@ -1,11 +1,11 @@
-var Api = (function() {// The Api module is designed to handle all interactions with the server
+var Api = (function() {//The Api module is designed to handle all interactions with the server
   var requestPayload;
   var responsePayload;
   var messageEndpoint = '/api/message';
-  return {// Publicly accessible methods defined
+  return {//Publicly accessible methods defined
     sendRequest: sendRequest,
-    getRequestPayload: function() {// The request/response getters/setters are defined here to prevent internal methods
-      return requestPayload;// from calling the methods without any of the callbacks that are added elsewhere.
+    getRequestPayload: function() {//The request/response getters/setters are defined here to prevent internal methods
+      return requestPayload;//from calling the methods without any of the callbacks that are added elsewhere.
     },
     setRequestPayload: function(newPayloadStr) {
       requestPayload = JSON.parse(newPayloadStr);
