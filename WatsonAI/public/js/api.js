@@ -17,15 +17,15 @@ var Api = (function() {// The Api module is designed to handle all interactions 
       responsePayload = JSON.parse(newPayloadStr);
     }
   };
-  function sendRequest(text, context) {// Send a message request to the server
-    var payloadToWatson = {};// Build request payload
+  function sendRequest(text, context) {//Send a message request to the server
+    var payloadToWatson = {};//Build request payload
     if (text)
       payloadToWatson.input = {
         text: text
       };
     if (context)
       payloadToWatson.context = context;
-    var http = new XMLHttpRequest();// Built http request
+    var http = new XMLHttpRequest();//Built http request
     http.open('POST', messageEndpoint, true);
     http.setRequestHeader('Content-type', 'application/json');
     http.onreadystatechange = function() {
@@ -33,8 +33,8 @@ var Api = (function() {// The Api module is designed to handle all interactions 
         Api.setResponsePayload(http.responseText);
     };
     var params = JSON.stringify(payloadToWatson);
-    if (Object.getOwnPropertyNames(payloadToWatson).length !== 0)// Stored in variable (publicly visible through Api.getRequestPayload)
-      Api.setRequestPayload(params);// to be used throughout the application
-    http.send(params);// Send request
+    if (Object.getOwnPropertyNames(payloadToWatson).length !== 0)//Stored in variable (publicly visible through Api.getRequestPayload)
+      Api.setRequestPayload(params);//to be used throughout the application
+    http.send(params);//Send request
   }
 }());
