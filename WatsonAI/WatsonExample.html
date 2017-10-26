@@ -102,3 +102,17 @@ anything_else
 <button id="counter" onClick="pricePlan(this.id);">Counter</button>
 <button id="checkbook" onClick="pricePlan(this.id);">Checkbook</button> <br> (<? now().reformatDateTime('yyyy-MM-dd') ?>)
 style='display:none'
+
+
+
+<iframe width="360" height="315" src="https://www.youtube.com/embed/yaDIltLfsfM?rel=0&autoplay=1" frameborder="0" allowfullscreen volumn='0'></iframe>
+Welcome CEM AI <br> 
+<button onClick="language('english');">English</button> 
+<button onClick="language('中文');">中文</button> 
+<button onClick="language('廣東話');">廣東話</button> 
+<button onClick="language('portuguese');">Português</button> 
+<br>(<? now().reformatDateTime('yyyy-MM-dd') ?>)
+
+
+<iframe style='display:none' onload="show('請問需要什麼服務嗎');"></iframe>
+請問需要什麼服務嗎?<input type="hidden" id="langCombo" value="cmn-Hant-TW">(<? now().reformatDateTime('yyyy-MM-dd') ?>)

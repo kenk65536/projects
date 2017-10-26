@@ -4,6 +4,11 @@ var http = require('http').createServer(app);
 var io = require('socket.io').listen(http);
 var users = [];
 io.sockets.on('connection', function(socket){
+  /*var url = socket.request.headers.referer;
+  var split_arr = url.split('/');
+  console.log(url);
+  console.log(split_arr);
+  console.log(split_arr.length - 1);*/
   socket.on('login', function(loginName) {
     if(users.indexOf(loginName) > -1)
       socket.emit('nameExisted', loginName);

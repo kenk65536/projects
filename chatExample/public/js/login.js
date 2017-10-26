@@ -1,3 +1,4 @@
+'use stric';
 var socket = io.connect();
 window.onload = function(){
   var chatForm = new ChatForm();
