@@ -1,6 +1,6 @@
 'use strict';
 var app = require('./app');
-var http = require('http').createServer(app);
+var http = require('http').Server(app);
 var io = require('socket.io').listen(http);
 var users = [];
 io.sockets.on('connection', function(socket){
@@ -17,7 +17,8 @@ io.sockets.on('connection', function(socket){
       socket.loginName = loginName;
       users.push(loginName);
       socket.emit('loginSuccess');
-      socket.broadcast.emit('addUser', loginName, users.length, 'login');
+      //socket.broadcast.emit('addUser', loginName, users.length, 'login');
+      socket.emit('addUser', loginName, users.length, 'login');
       console.log(loginName + ' login');
     }
   });
