@@ -21,8 +21,8 @@ app.get('/SpeechToText', function(request, response){
   response.sendFile('public/speechToText.html', {root: __dirname});
 });
 app.get('/ejsExample', function(request, response){
-  response.render('index.html');
-//  response.render('index');
+//  response.render('index.html');
+  response.render('index');
 });
 app.get('/me', function(request, response){
   response.send('Hello, this is my router');

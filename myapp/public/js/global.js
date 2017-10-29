@@ -41,5 +41,5 @@ function renew(index){
 function createTextField(){
   var textField = document.createElement('input');
   textField.setAttribute('type', 'text');
-  document.body.appendChild(textField);
+  document.getElementById('createHere').appendChild(textField);
 }
