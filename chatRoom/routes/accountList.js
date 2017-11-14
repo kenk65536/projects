@@ -11,7 +11,6 @@ router.get('/', function(request, response, next){
   var data = rows;
   response.render('accounts', {title: 'Account information', data: data});
   });
-  db.end();
 });
 router.post('/processes', urlencodedParser, function(request, response, next){
   response.send(request.body.submit);

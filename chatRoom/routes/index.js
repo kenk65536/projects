@@ -29,6 +29,5 @@ router.post('/chat', urlencodedParser, function(request, response, next){
       else
         response.send('User not found');
   });
-  db.end();
 });
 module.exports = router;
