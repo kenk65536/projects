@@ -1,0 +1,28 @@
+<table border='1' class='table'>
+  <tr><th>Permission</th><th>Room ID</th><th>Name</th><th>Password</th><th>Phone</th><th>Command</th></tr>
+  <%for(var i=0; i<data.length; i++){%>
+    <form method='post' action='account/processes'>
+      <tr>
+        <td>
+          <input type='text' id='permission' name='permission' class='text-center' value=<%= data[i].permission %>>
+        </td>
+        <td>
+          <input type='text' id='roomId' name='roomId' class='text-center' value=<%= data[i].roomId %>>
+        </td>
+        <td>
+          <input type='text' id='name' name='name' class='text-center' value=<%= data[i].userName %>>
+        </td>
+        <td>
+          <input type='password' id='password' name='password' class='text-center' value=<%= data[i].userPassword%>>
+        </td>
+        <td>
+          <input type='text' id='phone' name='phone' class='text-center' value=<%= data[i].phoneNumber%>>
+        </td>
+        <td>
+          <input type='submit' id='submit' name='submit' value='Edit'>
+          <input type='submit' id='submit' name='submit' value='Delete'>
+        </td>
+      </tr>
+    </form>
+  <%}%>
+</table>

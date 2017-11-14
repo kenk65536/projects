@@ -1,0 +1,29 @@
+<button id='verifyLogin'>Login</button>
+<div id='divLogin' class='modal'>
+  <form class='modal-content animate' method='post' action="/chat">
+    <div class='imgcontainer'>
+      <span id='spanClose' class='close' title='Close Modal'>&times;</span>
+      <img src='img/avatar.png' alt='Avatar' class='avatar'>
+    </div>
+    <div class='container'>
+      <label><b>Room number</b></label>
+      <select id='selectRoom' name='selectRoom'>
+        <option value='0'>1</option>
+        <option value='1'>2</option>
+        <option value='2'>3</option>
+        <option value='3'>4</option>
+        <option value='4'>5</option>
+      </select><br>
+      <label><b>User name</b></label>
+      <input id='inputUser' name='inputUser' type='text' placeholder='Enter Username' required='required'>
+      <label><b>Password</b></label>
+      <input id='inputPWD' name='inputPWD' type='password' placeholder='Enter Password' required='required'>
+      <button type='submit'>Login</button>
+      <input type='checkbox' checked='checked'> Remember me
+    </div>
+    <div class='container' style='background-color:#f1f1f1'>
+      <button id='buttonCancel' type="button" class='cancelbtn'>Cancel</button>
+      <span class=spanPW'>Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>

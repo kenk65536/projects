@@ -17,6 +17,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 app.engine('.html', require('ejs').__express);
 app.set('view engine','ejs');
 app.use(express.static('./public'));
+app.use(urlencodedParser);
 app.get('/SpeechToText', function(request, response){
   response.sendFile('public/speechToText.html', {root: __dirname});
 });
@@ -42,7 +43,7 @@ app.get('/getComment', function(request, response){
   console.log('comment: ' + request.query.comment);
   response.send(request.query.name + ' Thank your comment');
 });
-app.post('/postComment', urlencodedParser, function(request, response){
+app.post('/postComment', function(request, response){
   console.log('name: '  + request.body.name);
   console.log('email: '  + request.body.email);
   console.log('comment: '  + request.body.comment);
