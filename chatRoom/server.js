@@ -6,15 +6,12 @@ var app = require('./app');
 var http = require('http');
 var PORT = 3000;
 var server = http.Server(app);
-//test point
-//var db = require('./DBTest');
-//test point
 /* ****************************** *
  * Socket.io definition and setup *
  * ****************************** */
 var io = require('socket.io').listen(server);
 var roomUser = new Array();
-var roomId = 0;
+var roomId;
 io.on('connection', function(socket){
   var user = '';
   socket.on('join', function(roomNum, userName){
@@ -22,15 +19,19 @@ io.on('connection', function(socket){
     roomId = roomNum;
     if(!roomUser[roomId])
       roomUser[roomId] = new Array();
-    roomUser[roomId].push(user);
-    socket.join(roomId);
-    socket.to(roomId).emit('sys', user + ' 進來了');
-    socket.emit('sys', user + ' 進來了');
+    if(roomUser[roomId].indexOf(user) > -1)
+      socket.emit('nameExisted');
+    else{
+      roomUser[roomId].push(user);
+      socket.join(roomId);
+      socket.to(roomId).emit('sys', user + ' 進來了');
+      socket.emit('sys', user + ' 進來了');
+    }
   });
   socket.on('message', function(msg, roomNum){//Listen message from client
-    if(roomUser[roomId].indexOf(user) < 0)//Verify user in room
+    if(roomUser[roomNum].indexOf(user) < 0)//Verify user in room
       return false;
-    socket.to(roomId).emit('new message', user, msg);
+    socket.to(roomNum).emit('new message', user, msg);
     socket.emit('new message', user, msg);
   });
   socket.on('disconnect', function(){
