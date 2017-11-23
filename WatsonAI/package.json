@@ -13,10 +13,6 @@
     "autofix": "eslint --fix .",
     "codecov": "npm run test && (codecov || true)"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/watson-developer-cloud/conversation-simple.git"
-  },
   "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.15.2",
