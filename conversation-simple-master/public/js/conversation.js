@@ -152,10 +152,10 @@ var ConversationPanel = (function() {// The ConversationPanel module is designed
       var latestResponse = Api.getResponsePayload();
       if (latestResponse)
         context = latestResponse.context;
-      if(ChineseToNumber(inputBox.value) === undefined)
+//      if(ChineseToNumber(inputBox.value) === undefined)
         Api.sendRequest(inputBox.value, context);// Send the user message
-      else
-        Api.sendRequest(ChineseToNumber(inputBox.value), context);// Send the user message
+//      else
+//        Api.sendRequest(ChineseToNumber(inputBox.value), context);// Send the user message
       inputBox.value = '';// Clear input box for further messages
       Common.fireEvent(inputBox, 'input');
     }

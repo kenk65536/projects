@@ -17,6 +17,12 @@ function startButton(event) {
     recognition.start();//開始辨識
   }
 }
+function autoStart(){
+  alert('Test');
+//  final_transcript = '';//最終的辨識訊息變數
+//  recognition.lang = langCombo.value;//設定辨識語言
+  recognition.start();//開始辨識
+}
 if (!('webkitSpeechRecognition' in window)){//如果找不到window.webkitSpeechRecognition這個屬性, 就是不支援語音辨識，要求使用者更新瀏覽器。
   //infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
 }
@@ -38,16 +44,16 @@ else {
         final_transcript += event.results[i][0].transcript;//將其加入最終結果中
     if (final_transcript.trim().length > 0){//如果有最終辨識文字
       document.getElementById("startStopButton").src='img/micOff.svg';
-      if(ChineseToNumber(final_transcript) === undefined){
-        var number = final_transcript.match(/\d+/);
-        var words = final_transcript.split(final_transcript.match(/\d+/));
-        if(number === null)
-          sendText(final_transcript);
-        else
-          sendText(words[0] + ' ' + number + ' ' + words[1]);
-      }
-      else
-        sendText(ChineseToNumber(final_transcript));
+//      if(ChineseToNumber(final_transcript) === undefined){
+//        var number = final_transcript.match(/\d+/);
+//        var words = final_transcript.split(final_transcript.match(/\d+/));
+//        if(number === null)
+          sendText(final_transcript.split('蚊')[0]);
+//        else
+//          sendText(words[0] + ' ' + number + ' ' + words[1]);
+//      }
+//      else
+//        sendText(ChineseToNumber(final_transcript));
     }
   };
 }

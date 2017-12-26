@@ -9,13 +9,15 @@ var chnNumChar = {
   零:0,
   一:1,
   二:2,
+  兩:2,
   三:3,
   四:4,
   五:5,
   六:6,
   七:7,
   八:8,
-  九:9
+  九:9,
+  十:10
 };
 var chnNameValue = {
   十:{value:10, secUnit:false},
@@ -29,7 +31,7 @@ function ChineseToNumber(chnStr){
   var section = 0;
   var number = 0;
   var secUnit = false;
-  var chineseNumber = chnStr.match('[一二三四五六七八九百千萬]+');
+  var chineseNumber = chnStr.match('[零一二兩三四五六七八九十百千萬]+');
   var returnText = chnStr.split(chineseNumber);
   if(chineseNumber !== null){
     var str = chineseNumber[0].split('');
