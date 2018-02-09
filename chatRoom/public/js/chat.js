@@ -1,11 +1,9 @@
 var utterance = new SpeechSynthesisUtterance();
 utterance.text = '你好嗎，我要測試廣東話';
-
-//utterance.lang = 'en-GB'; // language, default is 'en-US'
-utterance.lang = 'zh-HK'; // language, default is 'en-US'
-utterance.volume = 0.5;   // volume, from 0 to 1, default is 1
-utterance.rate = 0.8;     // speaking rate, default is 1 
-
+//utterance.lang = 'en-GB';//language, default is 'en-US'
+utterance.lang = 'zh-HK';//language, default is 'en-US'
+utterance.volume = 0.5;//volume, from 0 to 1, default is 1
+utterance.rate = 0.8;//speaking rate, default is 1 
 // speak it!
 window.speechSynthesis.speak(utterance);
 $(function(){
